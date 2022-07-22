@@ -1,14 +1,10 @@
 fn main() {
-    let popsssy= 5;
-    println!("HELLLLLLO the number is: {}",popsssy);
-    {
-        let popsssy= 6;
-    println!("HELLLLLLO the number is: {}",popsssy);
-    
-    }
-    let popsssy= popsssy+ 5;
-    println!("HELLLLLLO the number is: {}",popsssy);
-    
-const POPY: u64=63;
-println!("pond op ber is: {}",POPY);
+    let mut tup =("sssqd",true,'d');
+    tup.0 ="gdsgs";
+
+    println!("{}",tup.0);
+
+    let mut arr:[i32;4] =[1,2,3,4];
+    arr[3]=3;
+    println!("{}",arr[3])
 }
