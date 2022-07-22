@@ -1,10 +1,7 @@
+use std::io;
 fn main() {
-    let mut tup =("sssqd",true,'d');
-    tup.0 ="gdsgs";
+    let mut input= String::new();
 
-    println!("{}",tup.0);
-
-    let mut arr:[i32;4] =[1,2,3,4];
-    arr[3]=3;
-    println!("{}",arr[3])
+    io::stdin().read_line(&mut input).expect("failed to read line");
+    println!("{}",input);
 }
