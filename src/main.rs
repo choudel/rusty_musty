@@ -1,17 +1,10 @@
-struct Person {
-    name: String,
-    age: u8,
-}
-impl ToString for Person {
-    fn to_string(&self) -> String {
-        return format!("My name is {} and I am {}", self.name, self.age);
-    }
-}
 fn main() {
-    let dom = Person {
-        name: String::from("Choudel"),
-        age: 21,
-    };
+    let mut my_vector = vec![1, 2, 3, 4];
 
-    println!("{}", dom.to_string());
+    println!("{}", my_vector[2]);
+    my_vector.push(48);
+    my_vector.remove(1);
+    for number in my_vector.iter() {
+        println!("{}", number);
+    }
 }
