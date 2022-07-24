@@ -1,15 +1,12 @@
 fn main() {
-    let mut n=0;
-    loop {
-        n+=1;
-        if n==7 {
-            continue;
+    let mut n = 0;
+    while n <= 50 {
+        if n % 5 == 0 {
+            println!("n is {}--------------", n);
+        } else {
+            println!("n is {}", n);
         }
-        if n >10{
-            break;
-        }
-        println!("the value of n is {}",n);
+
+        n += 1;
     }
-
 }
-
