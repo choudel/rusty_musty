@@ -1,8 +1,13 @@
+struct Color {
+    red: u8,
+    green: u8,
+    blue: u8,
+}
 fn main() {
-    let mut x = 10;
-    {
-        let dom = &mut x;
-        *dom += 1;
-    }
-    println!("x is {}", x);
+    let bg = Color {
+        blue: 21,
+        green: 85,
+        red: 63,
+    };
+    println!("{},{},{}", bg.blue, bg.green, bg.red);
 }
