@@ -1,10 +1,8 @@
+use std::fs::File;
+use std::io::prelude::*;
 fn main() {
-    let mut my_vector = vec![1, 2, 3, 4];
-
-    println!("{}", my_vector[2]);
-    my_vector.push(48);
-    my_vector.remove(1);
-    for number in my_vector.iter() {
-        println!("{}", number);
-    }
+    let mut file= File::open("info.txt").expect("can't read file!");
+    let mut content = String::new();
+    file.read_to_string(&mut content).expect("Oops! Can not read the file...");
+    println!("File Contents : \n\n {}",content);
 }
