@@ -1,10 +1,15 @@
 fn main() {
-    let s1:String=String::from("hello");
-    let len:usize=calculate_length(&s1);
-    println!("the length of {} is {}",s1,len)
+    let mut n=0;
+    loop {
+        n+=1;
+        if n==7 {
+            continue;
+        }
+        if n >10{
+            break;
+        }
+        println!("the value of n is {}",n);
+    }
 
 }
-fn calculate_length(s:&String)->usize{
-    let length:usize=s.len();
-    length
-}
+
