@@ -1,14 +1,15 @@
-struct Color{
-    red:u8,
-    blue:u8,
-    green:u8
-}
 
 fn main() {
-    let blue = Color{red:2,green:41,blue:69};
-    print_color(&blue);
-    print_color(&blue);
-}
-fn print_color(c:&Color) {
-    println!("Color R:{} G:{} B:{}",c.red, c.green,c.blue)
+    let numbers:[i32;4]=[2;4] ;
+
+   
+    for n in numbers.iter(){
+        println!("the number is {}",n)
+    }
+    for i in 1..numbers.len(){
+        println!("the number iterated by index {}",numbers[i])
+    }
+    for j in 2..numbers.len(){
+        println!("the number iterated index {}",numbers[j])
+    }
 }
