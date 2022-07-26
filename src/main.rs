@@ -1,20 +1,33 @@
-use std::collections::HashMap;
 fn main() {
-    let mut marks = HashMap::new();
-
-    marks.insert("Rust programming", 96);
-    marks.insert("Web Development", 94);
-    marks.insert("UX Design", 75);
-    marks.insert("Professional Computing Studies", 45);
-
-    println!("How many subjects have you stadied? {}", marks.len());
-    match marks.get("Web Development") {
-        Some(mark) => println!("you got {} for Web Dev!", mark),
-        None => println!("You didn't study that LOL"),
+    {
+        let my_string = String::from("Rust is fantastic!");
+        println!(
+            "the string is {}",
+            my_string.replace("fantastic!", "Awsome")
+        );
     }
-    marks.remove("UX Design");
-    for (subject, mark) in &marks {
-        println!("For {} you got {}%!",subject,mark);
-    } 
-    println!("did you study C++? {}",marks.contains_key("C++ Programming"));
+    {
+        let my_string = String::from("The weather is\nnice\noutside mate!");
+        for line in my_string.lines() {
+            println!("[ {} ]", line);
+        }
+    }
+    {
+        let my_string= String::from("Leave+a+like+if+you+enjoyed!");
+        let tokens: Vec<&str>=my_string.split("+").collect();
+        println!("{}",my_string);
+        println!("At index 2: {}",tokens[2]);
+    }
+    {
+        let my_string= String::from("  My name is choudel skk   ");
+        println!("after trim: {}",my_string.trim());
+    }
+    {
+        let my_string = String::from("dcode on tube");
+
+        match my_string.chars().nth(4){
+            Some(c)=>println!("Character at index 4: {}",c),
+            None =>println!("no char in index 4")
+        }
+    }
 }
