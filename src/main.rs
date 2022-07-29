@@ -1,22 +1,22 @@
-#![allow(dead_code)]
-enum Day {
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday,
+struct Object {
+    width: u32,
+    height: u32,
 }
-impl Day {
-    fn is_weekday(&self) -> bool {
-        match self {
-            &Day::Saturday | &Day::Sunday => return false,
-            _ => return true,
-        }
+impl Object {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+    fn new (width:u32, height:u32)->Object{
+        Object { width, height }
+    }
+    fn show(&self) {
+        println!("{}and{} the area is: {}", self.width, self.height, self.area());
     }
 }
+
 fn main() {
-    let d = Day::Saturday;
-    println!("is d a weekday? {}",d.is_weekday())
+    
+    let obj = Object::new(15, 60);
+    
+    obj.show();
 }
