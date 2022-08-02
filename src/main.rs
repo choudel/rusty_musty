@@ -1,13 +1,21 @@
 #![allow(unused)]
-use std::io;
 use rand::Rng;
-use std::io::{Write,BufReader,BufRead,ErrorKind};
-use std::fs::File;
 use std::cmp::Ordering;
+use std::fs::File;
+use std::io;
+use std::io::{BufRead, BufReader, ErrorKind, Write};
 fn main() {
-  println!("what is your name ?");
-  let mut name=String::new();
-  let greeting="nice to meet you";
-  io::stdin().read_line(&mut name).expect("didn't recieve input");
-  println!("Hello {}! {}", name.trim_end(),greeting)
+    let num_1: f32 = 1.11111111111;
+    println!("f32:{}", num_1 + 0.111111111111111);
+    let random_num = rand::thread_rng().gen_range(5..25);
+    println!("{}", random_num);
+    let my_age = 47;
+    let can_vote = if my_age >= 18 { true } else { false };
+    println!("can vote: {}", can_vote);
+    let voting_age = 18;
+    match my_age.cmp(&voting_age) {
+        Ordering::Less => println!("can't vote"),
+        Ordering::Greater => println!("you can vote"),
+        Ordering::Equal => println!(" you just made it to vote"),
+    }
 }
