@@ -5,34 +5,21 @@ use std::fs::File;
 use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 fn main() {
- enum Days {
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday
- }
- impl Days {
-  fn is_weekend(&self)-> bool{
-    match self {
-      Days::Saturday | Days::Sunday => true,
-      _=>false,
+    let vec1: Vec<i32> = Vec::new();
+    let mut vec2 = vec![1,2,3,4];
+    vec2.push(5);
+    println!("1st: {}", vec2[2]);
+    let second: &i32 = &vec2[1];
+    match vec2.get(1) {
+      Some(second)=> println!("2nd:{}",second),
+      None=> println!("mo 2 value"),
     }
-
-  }
-}
-let today:Days = Days::Monday;
-  match today {
-    Days::Friday=> println!("Not very nice day"),
-    Days::Monday=> println!("thanks for it"),
-    Days::Saturday=>println!("wierd day"),
-    Days::Sunday=>println!("party night "),
-    Days::Thursday=>println!("best days"),
-    Days::Tuesday=>println!("midweek"),
-    Days::Wednesday=>println!("weekday")
-  }
-  println!("is today the weekend {}",today.is_weekend());
- 
+    for i in &mut vec2{
+      *i *=3;
+    }
+    for i in &vec2  {
+        println!("{}",i)
+    }
+    println!("Vec Length {}",vec2.len());
+    println!("Pop : {:?}", vec2.pop())
 }
