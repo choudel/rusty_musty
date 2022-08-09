@@ -19,3 +19,7 @@ warp = "0.3.2"
 
 #seriliazation
 serde_json = "1.0.83"
+
+#graphQl
+async-graphql = "4.0.7"
+async-graphql-warp = "4.0.7"
